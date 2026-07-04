@@ -1,6 +1,6 @@
 # THEMIS PDL Measurement Protocol
 
-![verify](https://github.com/Wire-Wire/themis-pdl-protocol/actions/workflows/verify.yml/badge.svg) ![python](https://img.shields.io/badge/python-%E2%89%A53.10-blue) ![license](https://img.shields.io/badge/license-MIT-green) ![data](https://img.shields.io/badge/data-THEMIS%20%2B%20OMNI%20via%20CDAWeb-orange)
+![verify](https://github.com/Wire-Wire/themis-pdl-protocol/actions/workflows/verify.yml/badge.svg) [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21198269.svg)](https://doi.org/10.5281/zenodo.21198269) ![python](https://img.shields.io/badge/python-%E2%89%A53.10-blue) ![license](https://img.shields.io/badge/license-MIT-green) ![data](https://img.shields.io/badge/data-THEMIS%20%2B%20OMNI%20via%20CDAWeb-orange)
 
 A validated measurement protocol for statistical surveys of the **dayside plasma depletion layer (PDL)** in the THEMIS magnetosheath (2007–2025): a radial normalised magnetosheath coordinate, a multi-criterion magnetosheath-membership screen, per-event ion-spectral validation, and a selection-preserving characterisation of candidate environments, with a worked demonstration of the failure modes it corrects.
 
@@ -123,7 +123,7 @@ Some committed outputs and scripts carry **legacy internal tier labels** (`A_SPE
 
 ## Releases & DOI
 
-To make this citable: tag `v1.2.0`, create a GitHub release, and enable the repository on [Zenodo](https://zenodo.org) so the release is archived with a DOI; then paste the DOI badge here and into `CITATION.cff`. (TODO after the first push.)
+Every GitHub release is archived on [Zenodo](https://zenodo.org). To cite the software in general, use the concept DOI **[10.5281/zenodo.21198269](https://doi.org/10.5281/zenodo.21198269)** (always resolves to the latest version). The current release [v1.2.0](https://github.com/Wire-Wire/themis-pdl-protocol/releases/tag/v1.2.0) is archived as [10.5281/zenodo.21198270](https://doi.org/10.5281/zenodo.21198270).
 
 ## Cite
 

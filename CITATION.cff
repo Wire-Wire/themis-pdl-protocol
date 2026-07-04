@@ -4,6 +4,14 @@ title: "themis-pdl-protocol: a measurement protocol for statistical surveys of t
 type: software
 version: "1.2.0"
 date-released: "2026-07-03"
+doi: 10.5281/zenodo.21198269
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.21198270"
+    description: "Zenodo archive of this version (v1.2.0)"
+  - type: doi
+    value: "10.5281/zenodo.21198269"
+    description: "Zenodo concept DOI (all versions)"
 authors:
   - family-names: "Xie"
     given-names: "Mingda"
