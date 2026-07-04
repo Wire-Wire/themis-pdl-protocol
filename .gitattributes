@@ -1,0 +1,4 @@
+# Frozen reference trees: keep bytes exactly as committed on every platform
+# (the reproduction check is a diff against committed_outputs/, so no EOL conversion).
+committed_outputs/** -text
+data/** -text
