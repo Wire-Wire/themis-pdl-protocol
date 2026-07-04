@@ -1,0 +1,13 @@
+run24 — paired D_n shift (radial - fixed-axis) vs solar-zenith angle
+joined 672/672 encounters; SZA = median per-encounter substrate sza_deg
+
+ SZA bin (deg) |    N | med SZA |  med dDn |             95% CI | med Dn_1d | med Dn_rad
+--------------------------------------------------------------------------------------------
+     0-10      |  281 |     5.6 |    0.354 | [ +0.224, +0.592] |     0.577 |      1.114
+    10-20      |  271 |    15.0 |    0.080 | [ +0.036, +0.180] |     0.776 |      1.103
+    20-30      |  120 |    22.4 |    0.067 | [ -0.002, +0.466] |     0.680 |      1.128
+--------------------------------------------------------------------------------------------
+Spearman(SZA, dDn) = -0.225  (p = 3.47e-09)   [positive => shift grows off-subsolar]
+near-subsolar (SZA<20, N=552): median dDn = +0.213
+flank: none
+overall: median dDn = +0.184, median Dn_1d=0.689, median Dn_radial=1.114

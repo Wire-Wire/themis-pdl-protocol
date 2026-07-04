@@ -1,0 +1,25 @@
+RUN 10 — SELECTION FUNCTION FUNNEL
+each step is a FILTER on observability, not a non-detection. 107 is NOT an occurrence rate.
+
+stage                                           N    drop  reason-dropped
+0 substrate npz (readable)                   6248          (+0 unreadable files skipped)
+1 model-placeable (mp0,alpha,Dp ok; >=10)    6248       0  no valid Shue/Dp params or too few samples
+2 has in-sheath samples                      3869   -2379  window never in geometric magnetosheath
+3 has background s[0.6,1.0]                  1187   -2682  never sampled outer-sheath background
+4 CONTRIBUTING (membership near-shell)        661    -526  never sampled membership-sheath in s[0.05,0.20)
+5 northward (Bz>0)                            332    -329  Bz<=0 (329) or Bz unknown (0)
+6 CONFIRMED_PDL (clean classifier)            107    -225  northward but BOUNDARY_LAYER (24) or AMBIGUOUS (201)
+
+contributing classification  northward: {'BOUNDARY_LAYER': 24, 'CONFIRMED_PDL': 107, 'AMBIGUOUS': 201}
+contributing classification  southward: {'AMBIGUOUS': 300, 'BOUNDARY_LAYER': 29}  (Bz unknown: 0)
+contributing by probe: {'tha': 211, 'thb': 31, 'thc': 49, 'thd': 188, 'the': 182}
+
+INTERPRETATION: the 107 = moment-classified clean PDL candidates within the OBSERVABLE,
+northward, membership-screened subset. Any occurrence statistic must use the observable
+window (stage 4 = 661 contributing, or stage 3 = 1187 with-background) as denominator,
+stratified by SZA/Dp/probe/cone/coverage — NOT 6248.
+
+--- bias: CONTRIBUTING vs all model-placeable (SZA/Dp/cone medians) ---
+  sza : contributing med=14.24 IQR[7.31,20.26] N=661  |  northward med=14.46 IQR[7.95,18.64] N=332  |  CONFIRMED med=14.39 IQR[8.59,17.23] N=107
+  dp  : contributing med=2.40 IQR[1.69,3.78] N=661  |  northward med=2.22 IQR[1.69,3.40] N=332  |  CONFIRMED med=1.99 IQR[1.64,2.76] N=107
+  cone: contributing med=64.03 IQR[52.67,76.16] N=661  |  northward med=64.15 IQR[53.67,76.39] N=332  |  CONFIRMED med=67.34 IQR[55.46,78.01] N=107

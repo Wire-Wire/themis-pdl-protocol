@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pdl-protocol"
+version = "1.2.0"
+description = "Measurement protocol for statistical surveys of the dayside plasma depletion layer in the THEMIS magnetosheath: radial normalised coordinate, magnetosheath-membership screen, per-event ion-spectral validation."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { file = "LICENSE" }
+authors = [{ name = "Mingda Xie", email = "kunwirze@gmail.com" }]
+keywords = ["magnetosheath", "plasma depletion layer", "THEMIS", "magnetopause", "space physics"]
+classifiers = [
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering :: Physics",
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+]
+# Library core stays light; heavy/optional stacks are extras.
+dependencies = ["numpy>=1.24", "scipy>=1.10"]
+
+[project.optional-dependencies]
+plot = ["matplotlib>=3.7"]
+fetch = ["cdasws>=1.8", "xarray"]
+all = ["matplotlib>=3.7", "cdasws>=1.8", "xarray"]
+
+[project.scripts]
+pdl-find = "pdl_protocol.finder:main"
+pdl-contrast = "pdl_protocol.contrast:main"
+
+[project.urls]
+Repository = "https://github.com/Wire-Wire/themis-pdl-protocol"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+# NOTE: requirements.txt is a different thing on purpose — it pins the EXACT versions
+# of the original analysis environment for bit-level reproduction; pyproject gives the
+# library's compatible ranges for users.

@@ -1,0 +1,10 @@
+RUN 16 — dynamic-pressure ordering of the near-MP contrast (full contributing population)
+Dp tertile edges: 1.91, 3.14 nPa ; N total = 661
+
+Dp bin                    N  Dp med  Dn med           Dn 95% CI  EB med           EB 95% CI        Dn N/S
+low (Dp≤1.91)           223    1.56   0.711       [0.621,0.796]   2.257       [2.151,2.399]     0.70/0.76
+moderate (1.91–3.14)    218    2.40   0.928       [0.847,1.010]   2.077       [1.980,2.228]     0.81/1.05
+high (Dp>3.14)          220    4.59   1.158       [1.046,1.234]   1.633       [1.516,1.741]     1.21/1.15
+
+ORDERING: Dn_mem rises 0.711 -> 0.928 -> 1.158 across low->high Dp (monotonic; CIs separate => clear Dp ordering).
+Read as 'ordered by dynamic pressure' (Dp also sets boundary location/compression/observability), NOT 'caused by'.

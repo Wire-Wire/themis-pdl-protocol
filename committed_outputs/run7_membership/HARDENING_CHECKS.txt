@@ -1,0 +1,31 @@
+=== (A) MEMBERSHIP-THRESHOLD SENSITIVITY — Dn_mem (EB_mem) per shell ===
+setting                   [0.05,0.20)          [0.10,0.15)          [0.15,0.20)
+baseline              0.916(1.98)N667      0.914(1.99)N598      0.961(1.82)N641
+TBAND=2               0.943(1.93)N653      0.962(1.93)N572      0.966(1.78)N625
+TBAND=5               0.883(2.04)N683      0.867(2.01)N622      0.931(1.85)N661
+TBAND=inf             0.840(2.11)N707      0.834(2.07)N660      0.920(1.89)N687
+VFRAC=0               0.918(2.02)N680      0.925(2.00)N612      0.961(1.84)N660
+VFRAC=0.4             0.921(1.92)N639      0.943(1.90)N558      0.961(1.77)N613
+NFLOOR=0.1            0.916(1.98)N667      0.914(1.99)N598      0.961(1.82)N641
+NFLOOR=1.0            0.937(1.97)N663      0.950(1.97)N590      0.965(1.81)N637
+
+=== (B) MIRROR-MODE CHECK ===
+beta in PDL shells (member samples) — mirror needs beta>>1:
+  [0.05,0.20)    median beta = 0.97  (N=667)
+  [0.10,0.15)    median beta = 0.91  (N=598)
+  [0.15,0.20)    median beta = 1.15  (N=641)
+
+(encounters in test: 667)
+PROPER mirror test — Dn_mem split by DETRENDED residual r(dn,d|B|):
+  residual-mirror ACTIVE (r_resid<-0.5): N=171  Dn_mem=0.941
+  residual-mirror QUIET (r_resid>=-0.5): N=496  Dn_mem=0.910
+
+Was the RAW proxy just the PDL gradient (northward-IMF)? raw r(n,|B|) vs Bz:
+  raw r<-0.5: N=311  frac Bz>0=59%  Dn_mem=0.590
+  raw r>=-0.5: N=356  frac Bz>0=42%  Dn_mem=1.175
+
+For comparison — Dn_mem split by Bz sign:
+  Bz>0 (northward): N=333  Dn_mem=0.809
+  Bz<0 (southward): N=333  Dn_mem=0.994
+  -> If depletion survives residual-mirror-QUIET, and raw r<-0.5 tracks Bz>0, the signal is the
+     northward-IMF PDL gradient, NOT mirror aliasing.

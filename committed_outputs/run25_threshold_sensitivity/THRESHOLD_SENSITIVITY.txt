@@ -1,0 +1,18 @@
+loaded 1187 encounters
+
+=== MEMBERSHIP DENSITY-THRESHOLD SENSITIVITY  �� Dn_mem (EB_mem) N per shell ===
+baseline screen = TBAND 3 (T within x3 of background), VFRAC 0.2 (v>0.2 v_bg), n>floor
+setting                           [0.05,0.20)          [0.10,0.15)          [0.15,0.20)
+n>0.1                         0.916(1.98)N667      0.914(1.99)N598      0.961(1.82)N641
+n>0.3 (baseline)              0.916(1.98)N667      0.914(1.99)N598      0.961(1.82)N641
+n>0.5                         0.916(1.98)N667      0.924(1.99)N595      0.961(1.82)N641
+n>1.0                         0.937(1.97)N663      0.950(1.97)N590      0.965(1.81)N637
+n>2.0                         0.967(1.94)N653      0.987(1.92)N578      0.993(1.78)N627
+
+--- combined: raise density floor AND tighten temperature band ---
+n>1.0 & TBAND=2               0.955(1.93)N650      0.974(1.93)N569      0.978(1.77)N622
+n>2.0 & TBAND=2               0.980(1.89)N641      0.995(1.90)N564      0.999(1.76)N612
+
+Reading: the headline shell is the first column [0.05,0.20). If Dn_mem stays ~0.88-0.94
+as the density floor rises 0.1 -> 2.0, the near-MP contrast is NOT an artefact of an
+over-permissive density threshold.

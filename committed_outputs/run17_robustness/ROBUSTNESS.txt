@@ -1,0 +1,28 @@
+RUN 17 — boundary-placement + foreshock robustness (hardening test; no new claim)
+
+PART A — boundary-placement perturbation (membership Dn/EB in s[0.05,0.20), contributing set)
+scenario   N_contrib  median Dn  median EB   Dn by Dp tertile (low/mid/high)
+nominal          661      0.917      1.970   0.712 / 0.927 / 1.158
+mp-0.5           533      0.550      2.305   0.313 / 0.442 / 0.944
+mp+0.5           536      1.135      1.586   1.022 / 1.144 / 1.244
+bs-10%           579      0.725      1.773   0.372 / 0.687 / 0.899
+bs+10%           197      1.452      2.164   1.370 / 1.299 / 1.608
+random           466      0.935      1.876   0.827 / 0.950 / 1.052
+(nominal here recomputes the frozen result; perturbed rows show the effect of mis-placed boundaries.)
+
+PART B — foreshock / quasi-radial-IMF exclusion (low cone angle removed)
+  [cone>=0 (all)]
+    all contributing             N= 661  Dn=0.917  EB=1.970
+    moment-classified (107)      N= 107  Dn=0.633  EB=2.406
+    spectrally supported (60)    N=  60  Dn=0.676  EB=2.360
+    Dp tertile Dn (all-contributing): 0.711 / 0.928 / 1.158  (N=661)
+  [cone>=30]
+    all contributing             N= 636  Dn=0.922  EB=1.956
+    moment-classified (107)      N= 104  Dn=0.620  EB=2.398
+    spectrally supported (60)    N=  60  Dn=0.676  EB=2.360
+    Dp tertile Dn (all-contributing): 0.721 / 0.934 / 1.163  (N=636)
+  [cone>=45]
+    all contributing             N= 579  Dn=0.913  EB=1.944
+    moment-classified (107)      N= 100  Dn=0.627  EB=2.398
+    spectrally supported (60)    N=  60  Dn=0.676  EB=2.360
+    Dp tertile Dn (all-contributing): 0.709 / 0.939 / 1.160  (N=579)

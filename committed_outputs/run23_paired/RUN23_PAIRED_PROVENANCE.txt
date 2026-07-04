@@ -1,0 +1,13 @@
+RUN 23 - paired fixed-axis vs radial provenance (provenance closure)
+
+committed per-encounter table: runs/run23_paired/paired_1d_vs_radial.csv (672 rows)
+re-derived FROM that committed CSV (not the catalogue):
+  N pairs = 672
+  median D_n: fixed-axis(1d) 0.6887 -> radial(jbs) 1.1143
+  median per-encounter shift = +0.1840; 71.9% shift upward
+  Wilcoxon signed-rank (paired): N=671, z=13.93, two-sided p = 4.02e-44
+  bootstrap 95% CI on median shift = [+0.110, +0.271]
+  mean EB shift: fixed-axis 2.609 -> radial 1.642
+
+MATCHES RUN21 section-4 (0.6887 -> 1.1143, +0.1840, ~71.9%, p~4.0e-44) -> the coordinate result now
+re-derivable from a committed per-encounter table. No number changed; provenance only.

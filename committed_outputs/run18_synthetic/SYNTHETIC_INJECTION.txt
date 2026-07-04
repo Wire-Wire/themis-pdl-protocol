@@ -1,0 +1,23 @@
+RUN 18 — synthetic-injection forward test
+synthetic depletion amplitude n=0.5, field enhancement |B|=2.0; Dp tertile edges (1.91, 3.14)
+contributing synthetic encounters: 746
+
+OBSERVED (real data):           Dn  0.711 / 0.928 / 1.158   EB  2.257 / 2.077 / 1.633   (slope Dn = +0.447)
+
+scenario         N         Dn low/mid/high  Dn slope  art.frac          EB low/mid/high
+null           746       1.000/1.000/1.000    +0.000      0.00        1.000/1.000/1.000
+norm-layer     746       0.500/0.500/0.500    +0.000      0.00        2.000/2.000/2.000
+abs-700        746       1.000/1.000/1.000    +0.000      0.00        1.000/1.000/1.000
+abs-1000       746       1.000/1.000/1.000    +0.000      0.00        1.000/1.000/1.000
+abs-1300       746       1.000/1.000/1.000    +0.000      0.00        1.000/1.000/1.000
+dpcorr+        746       0.500/0.500/1.000    +0.500      1.12        2.000/2.000/1.000
+dpcorr-        746       1.000/0.500/1.000    +0.000      0.00        1.000/2.000/1.000
+
+READING: art.frac = synthetic Dn slope / observed Dn slope (+0.447).
+  ~1  => the observed Dp ordering is reproduced by a Dp-INDEPENDENT layer => coordinate/sampling artefact.
+  ~0 or NEGATIVE => a Dp-independent layer does NOT produce the observed (rising) trend => observed ordering is
+        physical-leaning (the artefact channel has small or opposite-sign effect); bound = |art.frac|.
+  norm-layer is the control: a layer fixed in s must be Dp-flat (art.frac ~ 0).
+  dpcorr+/- inject a WORST-CASE Dp-CORRELATED magnetopause error (~+/-0.5 R_E across the Dp range) on an
+        otherwise Dp-flat layer: if these stay ~flat, even a Dp-correlated boundary error cannot manufacture
+        the observed ordering (the channel the Devil's Advocate named is excluded).

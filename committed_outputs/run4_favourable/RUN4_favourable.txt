@@ -1,0 +1,36 @@
+RUN 4 — membership-verified PDL-relevant FAVOURABLE-REGIME profile (NOT a confirmed PDL occurrence)
+geometry=Jelinek radial; samples=membership-confirmed sheath; main PDL shell s in [0.05,0.20); s<0.05 = contamination layer
+
+--- cut=ALL  (encounters=1187) ---
+shell                  N  Dn_all   mem%  Dn_mem  EB_mem
+contam[0.00,0.05)    458   0.146    47%   0.653   2.221
+PDL[0.05,0.20)       667   0.755    80%   0.916   1.985
+[0.05,0.10)          551   0.459    71%   0.822   2.139
+[0.10,0.15)          598   0.795    90%   0.914   1.987
+[0.15,0.20)          641   0.901    96%   0.961   1.817
+[0.20,0.40)          840   1.081    99%   1.095   1.462
+
+--- cut=MAIN  (encounters=310) ---
+shell                  N  Dn_all   mem%  Dn_mem  EB_mem
+contam[0.00,0.05)    115   0.076    43%   0.354   2.655
+PDL[0.05,0.20)       182   0.552    84%   0.707   2.198
+[0.05,0.10)          146   0.276    71%   0.526   2.471
+[0.10,0.15)          166   0.504    93%   0.626   2.296
+[0.15,0.20)          178   0.798    98%   0.846   1.999
+[0.20,0.40)          218   0.985    99%   0.986   1.505
+
+--- cut=STRICT  (encounters=80) ---
+shell                  N  Dn_all   mem%  Dn_mem  EB_mem
+contam[0.00,0.05)     40   0.279    56%   0.505   2.049
+PDL[0.05,0.20)        48   0.641    90%   0.730   1.933
+[0.05,0.10)           43   0.511    82%   0.630   2.098
+[0.10,0.15)           43   0.610    91%   0.857   1.880
+[0.15,0.20)           48   0.879    99%   0.898   1.800
+[0.20,0.40)           58   0.984   100%   0.984   1.463
+
+--- DESCRIPTIVE GRID: PDL[0.05,0.20) Dn_mem / EB_mem  (cells with N>=30 only) ---
+    Bz     cone      SZA     N  Dn_mem  EB_mem
+  Bz<0  cone>45   SZA<15   149   0.985   1.980
+  Bz<0  cone>45 SZA15-30   136   0.999   1.827
+  Bz>0  cone>45   SZA<15   157   0.775   2.043
+  Bz>0  cone>45 SZA15-30   140   0.802   1.982

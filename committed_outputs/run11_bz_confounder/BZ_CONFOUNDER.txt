@@ -1,0 +1,41 @@
+RUN 11 — Bz CONFOUNDER CONTROL — mechanism robustness, NOT a detector/occurrence model
+population: ALL membership-screened CONTRIBUTING encounters with finite Bz (both signs); N=661
+  north(Bz>0)=332  south(Bz<=0)=329
+
+--- (a) MATCHED / STRATIFIED (median-split Dp,SZA,cone x probe) ---
+  split points: Dp>2.40, SZA>14.2deg, cone>64.0deg ; probe as-is
+  strata with >=2 north AND >=2 south: 30
+  within-stratum (north - south) median Dn_mem: median=-0.064  mean=-0.056
+  strata where north MORE depleted (diff<0): 18/30
+  sign-test p (north<south != chance): 0.3616
+  [unmatched baseline] median Dn_mem north=0.814 (N=332) vs south=0.994 (N=329); diff=-0.180
+  [unmatched baseline]   MEAN Dn_mem north=1.335 vs south=1.225; diff=+0.111  (mean vs median DISAGREE in sign => skewed/outlier-sensitive)
+  [unmatched] Mann-Whitney north<south p=7.10e-04
+  [unmatched] median-diff bootstrap 95% CI [-0.292, -0.071]  (excludes 0)
+
+--- (b0) COEFFICIENT PATH: Bz_sign coef as controls are added ---
+  Bz only                          Bz coef=+0.1107  SE=0.2332  p=0.6351  R2=0.000
+  Bz + Dp                          Bz coef=+0.2023  SE=0.2277  p=0.3746  R2=0.053
+  Bz + cone                        Bz coef=+0.1142  SE=0.2335  p=0.6252  R2=0.001
+  Bz + SZA                         Bz coef=+0.1115  SE=0.2334  p=0.6330  R2=0.000
+  Bz + Dp + cone + SZA             Bz coef=+0.2237  SE=0.2278  p=0.3263  R2=0.058
+  (If the Bz coef collapses toward 0 / loses significance the moment Dp enters, Dp is the confounder.)
+
+--- (b) OLS  Dn_mem ~ Bz_sign + cone + SZA + Dp + C(probe) ---
+  N=661  dof=652  R^2=0.060  (probe reference = tha)
+  term                  coef       SE       t         p
+  intercept           1.0707   0.5484    1.95    0.0513
+  bz_sign             0.2408   0.2304    1.05    0.2963
+  cone               -0.0126   0.0075   -1.69    0.0913
+  sza                -0.0095   0.0153   -0.62    0.5351
+  dp                  0.3751   0.0625    6.01    0.0000
+  probe_thb          -0.3414   0.5735   -0.60    0.5519
+  probe_thc          -0.2530   0.4706   -0.54    0.5910
+  probe_thd          -0.2798   0.2939   -0.95    0.3413
+  probe_the          -0.0752   0.2979   -0.25    0.8008
+  Bz_sign coef bootstrap 95% CI [-0.1767, +0.8858]  (includes 0)
+  (NEGATIVE Bz_sign coef = northward IMF -> LOWER Dn_mem = DEEPER depletion, controlling Dp/SZA/cone/probe.)
+
+--- (c) LOG-OLS  log(Dn_mem) ~ same terms (correct for a ratio response) ---
+  N=661  R^2=0.123 ; Bz_sign coef=-0.0770 (=-7.4% on Dn_mem)  SE=0.0724  p=0.2879
+  Dp coef=+0.1649  p=0.0000  (Dp remains the dominant, significant predictor)

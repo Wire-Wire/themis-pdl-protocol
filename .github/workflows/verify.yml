@@ -1,0 +1,25 @@
+name: verify
+on: [push, pull_request]
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ['3.10', '3.12']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - run: pip install -e . matplotlib
+      - run: python verify_key_numbers.py
+      - run: python tests/test_core.py
+      - run: python examples/01_one_encounter.py
+      - run: python examples/02_classify_spectrum.py
+      - run: python examples/03_bring_your_own_data.py
+      - run: python examples/04_find_candidates.py
+      - run: python examples/05_contrast_profile.py
+      - run: pdl-find
+      - run: pdl-contrast --paired-check
+      - run: python quickstart_fig2.py
+        env: {MPLBACKEND: Agg}

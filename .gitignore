@@ -1,0 +1,14 @@
+__pycache__/
+*.pyc
+outputs/
+data/omni_cache/
+data/substrate/*
+!data/substrate/2020-12-12_tha.npz
+!data/substrate/2011-12-18_the.npz
+!data/substrate/2024-04-18_tha.npz
+.DS_Store
+Thumbs.db
+.venv/
+build/
+*.egg-info/
+dist/

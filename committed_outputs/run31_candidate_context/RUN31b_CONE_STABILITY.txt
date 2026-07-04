@@ -1,0 +1,19 @@
+RUN31b - OMNI-STABLE CONE RE-CHECK
+  coverage: 320 northward encounters with re-fetched cone(t)  (A=58, NN=216)
+  fetch validation |stored cone - re-fetched within-window median cone|: median 4.1 deg, 90th 12.8 deg
+
+  full A-vs-NN cone: 68.2 vs 62.8  dMed +5.4  p=0.006543
+
+  within-window cone IQR over the universe: median 21.7 deg, IQR [15.0,29.2]
+  A vs NN cone-IQR (is upstream steadier for candidates?): 20.0 vs 21.6, MWU p=0.944
+
+  re-test the cone preference on upstream-STEADY subsets (small within-window cone IQR):
+  subset                        N(A)  N(NN)  A cone  NN cone   dMed         p
+  all (no stability cut)          58    216    68.2     62.8   +5.4  0.006543
+  cone IQR <= universe median     32    111    72.1     64.7   +7.4    0.1067
+  cone IQR <= 15 deg              13     60    74.3     63.0  +11.2   0.01986
+  cone IQR <= 10 deg               3     11   (too few)
+
+  Reading: if the A-vs-NN cone difference stays ~+6 deg and nominally significant on the
+  steady-IMF subset, the quasi-perpendicular preference is not an artefact of OMNI direction
+  instability; it is carried by encounters with a well-defined upstream IMF orientation.

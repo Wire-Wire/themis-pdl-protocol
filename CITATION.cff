@@ -1,0 +1,27 @@
+cff-version: 1.2.0
+message: "If you use this protocol or code, please cite both the software (below) and the dissertation."
+title: "themis-pdl-protocol: a measurement protocol for statistical surveys of the dayside plasma depletion layer"
+type: software
+version: "1.2.0"
+date-released: "2026-07-03"
+authors:
+  - family-names: "Xie"
+    given-names: "Mingda"
+    affiliation: "Mullard Space Science Laboratory, University College London"
+repository-code: "https://github.com/Wire-Wire/themis-pdl-protocol"
+license: MIT
+keywords:
+  - plasma depletion layer
+  - magnetosheath
+  - THEMIS
+  - magnetopause
+  - normalised coordinates
+preferred-citation:
+  type: thesis
+  title: "Coordinate construction and magnetosheath-membership screening in statistical surveys of the dayside plasma depletion layer: a THEMIS reassessment (2007-2025)"
+  authors:
+    - family-names: "Xie"
+      given-names: "Mingda"
+  institution:
+    name: "Mullard Space Science Laboratory, University College London"
+  year: 2026

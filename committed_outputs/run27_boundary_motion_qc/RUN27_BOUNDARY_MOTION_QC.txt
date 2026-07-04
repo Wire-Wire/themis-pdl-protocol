@@ -1,0 +1,42 @@
+RUN27 �� WITHIN-WINDOW BOUNDARY-MOTION QC
+contributing with usable 1-min OMNI: 637 of 661 (no/failed cache: 21; <1 h upstream coverage: 3)
+
+NOTE (pipeline fact, stated in manuscript Sec.3.2): boundary parameters are evaluated PER
+ENCOUNTER from encounter-averaged OMNI; within-window boundary motion is unmodelled. This QC
+bounds its impact with re-fetched 1-min OMNI.
+
+=== CROSS-CHECKS (fetch + formula consistency) ===
+  |median Shue r0(t) - stored mp0|: median 0.044 R_E, 90th pct 0.185 R_E
+  |OMNI-median Dp - stored dp| / stored: median 1.1%, 90th pct 4.2%
+
+=== WITHIN-WINDOW BOUNDARY MOTION (model subsolar standoffs, 1-min OMNI) ===
+  MP standoff range dMP: median 1.45 R_E, IQR [1.02,1.99], 90th 2.72, max 6.18
+  BS standoff range dBS: median 1.59 R_E, 90th 2.99
+  REGION-SWAP encounters (max r0(t) >= min R_BS(t), the reviewer's scenario): 41 of 637
+
+=== EXCLUSION SWEEP �� drop encounters with dMP above threshold; do the headline numbers move? ===
+cut                 N kept   D_n med   E_B med  60-set kept  D_n(A) med
+none (baseline)        637     0.924     1.948           58       0.683
+dMP <= 1.5 R_E         343     0.838     2.181           40       0.724
+dMP <= 1.0 R_E         142     0.740     2.522           20       0.706
+dMP <= 0.5 R_E           6     0.855     3.890            0         nan
+no region-swap         596     0.912     1.968           56       0.694
+
+Reading: if the D_n/E_B medians and the candidate count are stable as strongly-moving-boundary
+encounters are removed, within-window boundary motion is not driving the contrast; the swap
+count answers the reviewer's specific scenario directly.
+
+=== ADDENDUM �� Dp-entanglement check on the quiet-window deepening (Sec.7.4 discipline) ===
+dMP is computed from upstream Dp/Bz variability, so a dMP cut could partially re-express the
+(non-identifiable) Dp ordering. Check the Dp composition of the kept sets:
+  baseline           N=637  D_n=0.924  median Dp=2.40 nPa  median cone=64  frac northward=50%
+  dMP <= 1.5 R_E     N=343  D_n=0.838  median Dp=1.98 nPa  median cone=62  frac northward=57%
+  dMP <= 1.0 R_E     N=142  D_n=0.740  median Dp=1.90 nPa  median cone=59  frac northward=63%
+  no region-swap     N=596  D_n=0.912  median Dp=2.29 nPa  median cone=63  frac northward=50%
+
+Interpretation rule: if median Dp of the quiet subsets is well below the baseline 2.4 nPa, the
+deepening is partially the known model-coordinate Dp ordering (degenerate with a Dp-correlated
+boundary error, Sec.7.4) re-expressed through upstream variability; the quiet-window deepening
+must then be reported as CONSISTENT WITH smearing-dilution but NOT separable from the Dp
+degeneracy. The all-condition population value (D_n=0.92) remains the headline; the quiet-window
+value is a conditional, descriptive slice.

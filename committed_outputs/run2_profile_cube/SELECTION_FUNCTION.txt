@@ -1,0 +1,14 @@
+SELECTION FUNCTION
+
+total substrate npz        : 6248
+with sheath samples        : 3878
+with background (s[0.6,1]) : 1189
+reach a clean shell [0.10,0.20] : 2694
+CONTRIBUTING (bg AND clean shell): 722
+  of with-bg, reach s<0.20 : 724/1189
+  of with-bg, reach s<0.10 : 676/1189
+contributing by probe      : {'tha': 227, 'thb': 38, 'thc': 51, 'thd': 206, 'the': 200}
+--- bias check: contributing vs all-eligible ---
+  sza : eligible med=14.88 IQR[7.97,21.10] N=3878  |  contributing med=14.22 IQR[7.14,20.07] N=722
+  dp  : eligible med=1.92 IQR[1.42,2.64] N=3878  |  contributing med=2.42 IQR[1.69,3.87] N=722
+  cone: eligible med=62.47 IQR[49.78,75.55] N=3878  |  contributing med=64.15 IQR[52.68,76.53] N=722

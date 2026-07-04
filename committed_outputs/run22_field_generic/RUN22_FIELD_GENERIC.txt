@@ -1,0 +1,34 @@
+RUN 22 - supporting statistics (field-generic + tier-2 systematic)
+contributing N = 661
+
+=== FACET 1: the field enhancement E_B is GENERIC (not a PDL discriminator) ===
+  clean 60   (spec=SHEATH_CONSISTENT): median E_B = 2.360
+  rejected32 (HOT_BOUNDARY+SHAPE_FLAG): median E_B = 2.453
+  hot 28     (HOT_BOUNDARY_FLAG)      : median E_B = 2.719  (>1 in 28/28 = 100%)
+  Mann-Whitney E_B clean-60 vs rejected-32: U=746.0, z=-1.754, two-sided p = 0.079
+    => indistinguishable (p>0.05), and the median trends HIGHER in the rejected
+       contamination -> the field rise does NOT discriminate PDL from contamination.
+  non-depleted encounters (D_n>1, i.e. NO density depletion): N = 293
+    median E_B = 1.592; E_B>1 in 266/293 = 91%
+    => the field is enhanced even where there is no depletion at all.
+  (cf. RUN2 SHEATH_GEOM profile: E_B already 1.67 at mid-sheath s in [0.20,0.30]
+       where D_n=1.04 - the field rises smoothly across the WHOLE sheath: generic
+       compression/draping, not a localised depletion-layer feature.)
+  PARALLEL to the anticorrelation result (r_nB clean -0.81 vs rejected -0.80,
+  MWU p=0.81): BOTH legs of the n-|B| coupling are generic. Calling the field the
+  'robust half of the [depletion-layer] signature' headlines a non-PDL-specific quantity.
+
+=== FACET 2: tier-2 'statistically below unity' omits the dominant systematic ===
+  population median D_n = 0.9169
+  SAMPLING uncertainty (RUN21, fixed boundary): Wilcoxon-vs-1 two-sided p=0.013;
+    bootstrap median 95% CI [0.871, 0.972] -> half-width = 0.0505
+  SYSTEMATIC uncertainty (RUN17 / Appendix C, correlated boundary offset):
+    magnetopause -0.5 R_E -> median D_n = 0.550   (excursion -0.367)
+    magnetopause +0.5 R_E -> median D_n = 1.135   (excursion +0.218; >1 = NO decrease)
+    bow shock   +10%      -> median D_n = 1.452
+  systematic excursion (to +0.5 R_E) / sampling CI half-width = 4.3x
+  => the p=0.013 / CI[0.87,0.97] are conditional on an UNBIASED boundary; a plausible
+     correlated offset (Staples 2020: model under-tracks OUTWARD at high D_p) moves the
+     median to 1.135 (>1), erasing the sub-unity verdict. The systematic is ~4x the
+     sampling CI and is DIRECTIONAL. The fine-shell profile (S5) shares the same
+     coordinate, so it does not provide an independent escape.

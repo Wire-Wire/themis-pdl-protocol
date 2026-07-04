@@ -1,0 +1,19 @@
+RUN 19b — Appendix-E supplementary stats (median/IQR/fractions; from run19 CSV, no re-pass)
+
+all-contributing (661)
+  R_stat  N=661  median=1.453  IQR[1.249,1.765]  frac>1.25=0.75  frac_in[0.8,1.25]=0.24  frac<0.8=0.01
+  R_Ptot  N=661  median=1.141  IQR[0.957,1.366]  frac>1.25=0.36  frac_in[0.8,1.25]=0.54  frac<0.8=0.10
+  R_Pdyn  N=661  median=0.298  IQR[0.146,0.610]  frac>1.25=0.07  frac_in[0.8,1.25]=0.09  frac<0.8=0.85
+
+60 spectrally-supported
+  R_stat  N= 60  median=1.308  IQR[1.221,1.587]  frac>1.25=0.65  frac_in[0.8,1.25]=0.35  frac<0.8=0.00
+  R_Ptot  N= 60  median=1.050  IQR[0.949,1.302]  frac>1.25=0.27  frac_in[0.8,1.25]=0.60  frac<0.8=0.13
+  R_Pdyn  N= 60  median=0.281  IQR[0.180,0.440]  frac>1.25=0.02  frac_in[0.8,1.25]=0.03  frac<0.8=0.95
+
+32 spectral false-pos
+  R_stat  N= 32  median=1.460  IQR[1.260,1.619]  frac>1.25=0.75  frac_in[0.8,1.25]=0.25  frac<0.8=0.00
+  R_Ptot  N= 32  median=1.196  IQR[1.067,1.350]  frac>1.25=0.38  frac_in[0.8,1.25]=0.56  frac<0.8=0.06
+  R_Pdyn  N= 32  median=0.166  IQR[0.121,0.257]  frac>1.25=0.03  frac_in[0.8,1.25]=0.00  frac<0.8=0.97
+
+substrate npz keys (sample file): alpha, beta, bmag, bs0, bx, bz, clock_deg, cone_deg, date, dp, ma, month, mp0, n, p_b, p_th, p_tot, probe, r_re, sza_deg, t, vmag, x_mean, x_re, y_re, year, z_re
+velocity VECTOR present? False   (if False: only speed |v|='vmag' -> v_normal NOT directly available; P_dyn=rho*|v|^2 is an UPPER estimate of the normal dynamic-pressure compensation)

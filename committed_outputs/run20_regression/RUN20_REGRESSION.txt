@@ -1,0 +1,25 @@
+RUN 20 — Table-5 regression (log-OLS of log(Dn_mem); committed for provenance)
+source: outputs/run10_selection/funnel_contributing.csv
+N = 661  (contributing encounters with finite Dn>0, Bz-sign, Dp, SZA, cone)
+probe reference = tha; dummies = ['probe_thb', 'probe_thc', 'probe_thd', 'probe_the']
+p-values: two-sided normal approximation (erfc); 95% CI: nonparametric bootstrap, 5000 resamples, seed 0.
+
+--- UNCONTROLLED (Bz-sign only) ---
+  Bz(north=1): coef=-0.1348  SE=0.0757  p=0.0750  boot95% CI=[-0.288,+0.014]   R2=0.0048
+
+--- CONTROLLED (Bz, Dp, SZA, cone, probe dummies); R2=0.1228 ---
+  term                coef       SE         p             boot95% CI    VIF
+  Bz(north=1)      -0.0770   0.0724    0.2875 [-0.226,+0.070]  1.027
+  Dp(per nPa)      +0.1649   0.0196    0.0000 [+0.125,+0.207]  1.135
+  SZA(deg)         -0.0016   0.0048    0.7381 [-0.011,+0.008]  1.040
+  cone(deg)        -0.0002   0.0023    0.9220 [-0.005,+0.004]  1.059
+  probe_thb        -0.1435   0.1803    0.4260 [-0.440,+0.155]  1.137
+  probe_thc        -0.0697   0.1479    0.6374 [-0.380,+0.254]  1.176
+  probe_thd        +0.0774   0.0924    0.4022 [-0.100,+0.259]  1.360
+  probe_the        +0.0912   0.0936    0.3297 [-0.104,+0.279]  1.369
+  intercept        -0.7263   0.1724
+
+IMF-Dp correlation r = -0.0666  (p = 0.087)
+IMF attenuation: uncontrolled coef -0.1348 -> controlled -0.0770  (controlled is 57% of uncontrolled)
+
+NOTE: reproduces manuscript Table 5; values match the figures reported there. p for the large-|t| Dp term is below the erfc floor (report as <1e-4).

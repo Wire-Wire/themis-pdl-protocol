@@ -1,0 +1,60 @@
+RUN30 - DENOMINATOR-SELECTION NULL
+gate-lite = the density part of the candidate screen: 0.40 <= D_n <= 0.90 AND n_near >= 2.0 cm^-3
+universe  = northward contributing encounters (the population the candidate gate operates on)
+
+universe N=332 (northward contributing); with usable OMNI density N=320
+  [PASS] A count == 60
+  [PASS] NN count == 225
+  [PASS] A n_bg median ~31.1
+  [PASS] NN n_bg median ~25.2
+  [PASS] A ratio_bg median ~4.47
+  [PASS] NN ratio_bg median ~3.64
+
+=== OBSERVED (real pairing) ===
+gate-lite passers: 112 of 332 (committed moment candidates are 107 = A60+REJ32+BORD15; gate-lite is the density part only)
+  fraction of committed A/REJ/BORD that pass gate-lite: 100.00%
+  fraction of gate-lite passers that are committed candidates: 95.54%
+  pass-vs-fail background density gap : dMed = +5.76 cm^-3 (MWU p=0.00044)
+  pass-vs-fail OMNI-ratio gap         : dMed = +0.74        (MWU p=3.9e-05)
+  (committed A-vs-NN references: +5.85 cm^-3 [run28]; +0.83 ratio [run29 addendum])
+
+strata: Dp tertile x cone tertile -> 9 cells, sizes [31, 32, 34, 34, 37, 38, 40, 40, 46]
+
+=== GATE-DRAG EXPOSURE (Spearman vs n_bg in the northward universe) ===
+(a density-selecting gate can indirectly induce a preference on any axis correlated with n_bg)
+  cone  vs n_bg: rho=+0.194 (p=0.00039)
+  sza   vs n_bg: rho=+0.006 (p=0.92)
+  t_bg  vs n_bg: rho=-0.422 (p=9.7e-16)
+  v_bg  vs n_bg: rho=-0.230 (p=2.3e-05)
+  dp    vs n_bg: rho=+0.321 (p=2.1e-09)
+  ma    vs n_bg: rho=+0.007 (p=0.9)
+  observed pass-vs-fail cone gap: +6.05 (MWU p=0.0096)
+  observed pass-vs-fail sza gap: +0.30 (MWU p=0.87)
+  observed pass-vs-fail t_bg gap: -33.76 (MWU p=0.018)
+  observed pass-vs-fail v_bg gap: -18.43 (MWU p=0.012)
+
+=== NULL A (independence within Dp x cone tertile strata; 5000 permutations, seed=30) ===
+  raw n_bg gap (cm^-3)  : null median +6.55, 95% band [+3.33,+9.28]  observed +5.76 -> 30.0th pct (P[null>=obs]=0.7002)
+  OMNI-ratio gap        : null median +0.51, 95% band [+0.18,+0.82]  observed +0.74 -> 92.1th pct (P[null>=obs]=0.0786)
+  cone gap (dragged axis): null median +0.30, 95% band [-3.05,+4.35]  observed +6.05 -> 99.3th pct (P[null>=obs]=0.0070)
+  sza gap (dragged axis): null median +0.30, 95% band [-2.60,+2.05]  observed +0.30 -> 52.4th pct (P[null>=obs]=0.4758)
+  t_bg gap (dragged axis): null median -13.87, 95% band [-34.71,+3.61]  observed -33.76 -> 3.5th pct (P[null>=obs]=0.9654)
+  v_bg gap (dragged axis): null median -6.90, 95% band [-17.06,+1.74]  observed -18.43 -> 0.9th pct (P[null>=obs]=0.9906)
+  (cone strata partially pin the cone composition; the cone row here is a LOWER bound on drag)
+
+=== NULL B (Dp-tertile strata only - full drag channel open; 5000 permutations) ===
+  raw n_bg gap (cm^-3)  : null median +6.18, 95% band [+2.41,+9.38]  observed +5.76 -> 40.8th pct (P[null>=obs]=0.5920)
+  OMNI-ratio gap        : null median +0.47, 95% band [+0.12,+0.79]  observed +0.74 -> 95.1th pct (P[null>=obs]=0.0492)
+  cone gap (dragged axis): null median +1.30, 95% band [-2.60,+6.00]  observed +6.05 -> 97.6th pct (P[null>=obs]=0.0242)
+  sza gap (dragged axis): null median +0.20, 95% band [-2.80,+2.00]  observed +0.30 -> 52.9th pct (P[null>=obs]=0.4710)
+  t_bg gap (dragged axis): null median -16.75, 95% band [-37.73,+2.59]  observed -33.76 -> 5.6th pct (P[null>=obs]=0.9436)
+  v_bg gap (dragged axis): null median -6.20, 95% band [-17.13,+2.45]  observed -18.43 -> 1.0th pct (P[null>=obs]=0.9900)
+
+=== READING (discipline: descriptive, selection-limited) ===
+The independence null quantifies the WORST-CASE mechanical induction of a dense-background
+preference by the D_n gate alone (real near/background coupling weakens it). Compare the
+observed gate-pass gap with the null band:
+  - observed ABOVE the null 97.5th pct -> the dense-background association exceeds what the
+    density-ratio gate can manufacture; report as a robust selection-limited association.
+  - observed INSIDE the null band -> the association is within mechanical-induction reach;
+    report it only as 'consistent with the candidate definition' (downgrade the wording).

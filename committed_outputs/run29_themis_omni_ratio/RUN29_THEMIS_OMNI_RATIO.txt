@@ -1,0 +1,28 @@
+RUN29 — THEMIS-TO-OMNI RATIO CHECK (reviewer-suggested cross-check)
+encounters with usable OMNI density: 637 of 661 (missing/short cache: 24)
+
+=== (1) BACKGROUND VALIDATION — is the background really shocked sheath? ===
+  n_bg / n_sw (all contributing): 3.77 [2.96,4.68]   (gas-dynamic shock compression ~3-4x expected)
+  fraction in [2, 6]: 87%;  fraction < 1.5: 7%
+  v_bg / v_sw (all contributing): 0.246 [0.202,0.299]   (decelerated subsolar sheath flow expected ~0.2-0.4)
+
+=== (2) DOES THE OMNI-RATIO CLASSIFIER SEPARATE THE SPECTRAL FALSE POSITIVES? ===
+  near-shell n / n_sw      A       2.84 [2.34,3.37]   REJ       2.44 [2.02,2.92]   NN     3.79 [1.31,5.13]   MWU(A-REJ) p=0.0326
+  background n / n_sw      A       4.47 [3.72,5.02]   REJ       4.16 [3.63,4.83]   NN     3.64 [2.91,4.59]   MWU(A-REJ) p=0.271
+
+Reading: (1) calibrates the suggested classifier on the unambiguous case (background vs solar
+wind); (2) is the decisive test — if A and REJ overlap in the in-situ-to-OMNI MOMENT-density
+ratio, the suggested classifier inherits the same moment blindness the membership screen has,
+and the ion energy SPECTRA remain the only discriminator that separates the contamination
+(peak-energy ratio 1.0 vs ~24). Either outcome is reportable; neither changes the two principal results.
+
+=== ADDENDUM (committed post-hoc): A-vs-NN on the OMNI-normalised ratios ===
+(the section-2 table above only tested A-vs-REJ; the dense-sheath finding of run28 in
+ ratio form, n_bg/n_sw, removes solar-wind density variation; Dp and M_A are A-vs-NN null
+ in run28, so the normalisation does not import a known group difference)
+  background n_bg / n_sw      A  4.47 [3.72,5.02] (N=58)   NN  3.64 [2.91,4.59] (N=216)   MWU(A-NN) p=3.92e-05   dMed[95%CI] +0.83 [+0.40,+1.18]
+  near-shell n / n_sw         A  2.84 [2.34,3.37] (N=58)   NN  3.79 [1.31,5.13] (N=216)   MWU(A-NN) p=0.0284   dMed[95%CI] -0.95 [-1.51,-0.44]
+  background v_bg / v_sw      A  0.24 [0.20,0.27] (N=58)   NN  0.24 [0.19,0.29] (N=216)   MWU(A-NN) p=0.767   dMed[95%CI] +0.00 [-0.02,+0.02]
+Reading: descriptive, selection-limited (same discipline as run28); a significant background-
+ratio excess in A would state the run28 dense-sheath preference in compression-ratio form
+(stronger-than-average shock compression), independent of absolute solar-wind density.

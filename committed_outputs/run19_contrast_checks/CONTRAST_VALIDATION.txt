@@ -1,0 +1,48 @@
+RUN 19 — CONTRAST VALIDATION (pressure budget + event-wise density-field coupling)
+populations: all-contributing=661  moment-cand=107  spectrally-supported=60  spectral-false-pos=32
+unit cross-check (median over backgrounds of KMAG*B^2 / (p_th/beta)) = 1.000  (should be ~1 if substrate beta = P_th/P_B; ratios are near/bg so a constant offset cancels)
+
+=== CHECK 1: per-encounter NEAR/BACKGROUND pressure ratios (median [IQR]) ===
+P_th = ION thermal only; 'static' = ion-thermal+magnetic (NOT full total pressure);
+P_dyn, P_tot are ION terms (omit electron thermal ~10-20%). A genuine pile-up: P_stat~1, OR
+P_stat>1 compensated by P_dyn<1 so P_tot~1 (stagnation). P_stat AND P_tot >>1 => artefact/under-count.
+
+  D_n              |   all contributing:      0.917 [0.517,1.293] |  moment candidates:      0.633 [0.532,0.757] | spectrally-support:      0.676 [0.526,0.784] | spectral false-pos:      0.582 [0.526,0.700]
+  E_B              |   all contributing:      1.970 [1.489,2.781] |  moment candidates:      2.406 [2.049,3.134] | spectrally-support:      2.360 [1.808,2.858] | spectral false-pos:      2.453 [2.161,3.132]
+  P_B n/bg         |   all contributing:         3.88 [2.22,7.74] |  moment candidates:         5.79 [4.20,9.82] | spectrally-support:         5.57 [3.27,8.17] | spectral false-pos:         6.02 [4.69,9.81]
+  P_th n/bg        |   all contributing:         0.88 [0.47,1.33] |  moment candidates:         0.56 [0.45,0.68] | spectrally-support:         0.59 [0.50,0.72] | spectral false-pos:         0.49 [0.39,0.66]
+  P_stat(th+mag)   |   all contributing:         1.45 [1.25,1.77] |  moment candidates:         1.36 [1.22,1.59] | spectrally-support:         1.31 [1.22,1.59] | spectral false-pos:         1.46 [1.26,1.62]
+  P_dyn n/bg       |   all contributing:         0.30 [0.15,0.61] |  moment candidates:         0.23 [0.15,0.42] | spectrally-support:         0.28 [0.18,0.44] | spectral false-pos:         0.17 [0.12,0.26]
+  P_tot(+dyn)      |   all contributing:         1.14 [0.96,1.37] |  moment candidates:         1.09 [0.94,1.32] | spectrally-support:         1.05 [0.95,1.30] | spectral false-pos:         1.20 [1.07,1.35]
+  v n/bg           |   all contributing:         0.61 [0.45,0.79] |  moment candidates:         0.62 [0.51,0.79] | spectrally-support:         0.64 [0.53,0.79] | spectral false-pos:         0.60 [0.47,0.78]
+  beta_near        |   all contributing:         0.98 [0.28,2.36] |  moment candidates:         0.45 [0.27,0.79] | spectrally-support:         0.48 [0.28,0.84] | spectral false-pos:         0.41 [0.23,0.60]
+  T_near eV        |   all contributing:            233 [156,352] |  moment candidates:            156 [123,228] | spectrally-support:            147 [120,235] | spectral false-pos:            170 [130,218]
+
+  [60] static budget P_stat near/bg: median 1.31; frac>1.25 = 0.65
+  [60] ion total  P_tot  near/bg: median 1.05; frac in [0.8,1.25] = 0.60
+  [60] dynamic    P_dyn  near/bg: median 0.28  (flow stagnation if <1)
+
+=== CHECK 2a: event-level Spearman(D_n, E_B) across each population ===
+(PDL => NEGATIVE: deeper depletion (low D_n) goes with stronger field (high E_B))
+  all contributing           N= 661  Spearman(D_n,E_B) = -0.420  (perm p = 0.0001)
+  moment candidates (107)    N= 107  Spearman(D_n,E_B) = -0.067  (perm p = 0.4993)
+  spectrally-supported (60)  N=  60  Spearman(D_n,E_B) = -0.014  (perm p = 0.9168)
+  spectral false-pos (32)    N=  32  Spearman(D_n,E_B) = +0.119  (perm p = 0.5238)
+
+=== CHECK 2b: per-event Spearman(n,|B|) over inner membership samples s in [0.05,0.40) ===
+(PDL => most events NEGATIVE; compare clean 60 vs false-pos 32 vs all-contributing)
+  all contributing           N= 661  median r = -0.662  frac<0 = 0.95  frac<-0.3 = 0.85
+  moment candidates (107)    N= 107  median r = -0.803  frac<0 = 0.99  frac<-0.3 = 0.97
+  spectrally-supported (60)  N=  60  median r = -0.810  frac<0 = 0.98  frac<-0.3 = 0.95
+  spectral false-pos (32)    N=  32  median r = -0.799  frac<0 = 1.00  frac<-0.3 = 1.00
+
+=== READ-OUT (user's decision rule) ===
+  unconditioned all-contributing: D_n = 0.917, E_B = 1.970 (N=661)
+  conditional spectrally-supported(60): D_n = 0.676, E_B = 2.360
+  pressure compensation (ion total near/bg median = 1.05): REASONABLE
+  density-field anticorrelation (event-level rho60=-0.014 p=0.9168; all rho=-0.420 p=0.0001; per-event n-|B| frac<0(60)=0.98): HOLDS
+  => VERDICT: KEEP 0.68/2.4 as a CONDITIONAL physical contrast for the selected sheath-like
+     candidates, while the main text reports the unconditioned all-contributing D_n (~0.92).
+
+NOTE: this ion budget omits electron thermal pressure (~10-20% of ion in the sheath); P_dyn uses
+ESA bulk speed. The check is diagnostic, not a closed total-pressure proof.

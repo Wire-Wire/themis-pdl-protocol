@@ -1,0 +1,76 @@
+RUN28 �� CANDIDATE-VS-BASELINE CHARACTERISATION
+groups: A(spectrally supported)=60  REJ(spectral false pos)=32  BORD=15  NN(northward non-candidate baseline)=225  NA(all non-candidates)=554
+contributing total=661 (committed run10 set); substrate background join missing for 0
+primary test: A vs NN (IMF-matched baseline), two-sided Mann-Whitney U;
+median difference with bootstrap 95% CI; 12 clean-axis tests -> Bonferroni p<0.0042 (nominal p also shown)
+
+=== CLEAN AXES (not candidate-selection inputs) �� where are candidates FOUND? (descriptive, selection-limited) ===
+axis                                                    A median[IQR]           NN median[IQR]   NA med  REJ med   p(A-NN)                dMed[95%CI] sig
+D_p (nPa)                                            2.25 [1.69,2.81]         2.32 [1.72,3.65]     2.45      1.8     0.133    -0.075 [-0.56,+0.31] 
+                                             note: indirect selection: choosing depleted D_n prefers low-D_p via the Sec.7 model-coordinate ordering, itself degenerate with a Dp-correlated boundary error (Sec.7.4) -> descriptive only
+IMF cone angle (deg)                                 69.3 [60.7,77.7]           63.3 [53,74.3]     63.5     62.3   0.00552        +6 [+0.05,+11.8] *
+|clock| from due north (deg)                         56.4 [33.6,73.8]         60.5 [44.2,77.1]      100     61.5     0.192     -4.05 [-14.9,+2.9] 
+                                             note: within-northward comparison (B_z>0 is a selection condition)
+IMF B_z (nT)                                         1.58 [0.75,2.95]         1.45 [0.56,2.99]    -0.45     1.26     0.614     +0.13 [-0.315,+0.925] 
+                                             note: within-northward comparison
+Alfven Mach number M_A                                  9.4 [7.85,12]           9.5 [7.5,11.9]     9.65     10.9     0.703      -0.1 [-1.05,+1.25] 
+solar-zenith angle (deg)                             14.8 [10.4,19.1]          14.6 [7.6,19.6]     14.2     11.6     0.742      +0.2 [-1.55,+2.9] 
+model MP standoff (R_E)                              10.1 [9.77,10.6]         10.1 [9.41,10.5]     9.82     10.4     0.126   +0.0421 [-0.176,+0.388] 
+                                             note: D_p/B_z-induced (Shue parameters)
+model subsolar sheath thickness BS0-MP0 (R_E)          2.9 [2.78,3.01]         2.87 [2.68,3.01]     2.82     2.96     0.323   +0.0229 [-0.0304,+0.0693] 
+                                             note: D_p-induced (both standoffs scale with D_p)
+background sheath density (cm^-3)                    31.1 [23.2,46.9]         25.2 [14.6,35.8]     24.2     25.3   0.00266     +5.85 [+1.88,+13.2] **
+                                             note: partially induced: floor n_bg >= n_near/0.90 >= 2.2 from the candidate cuts
+background sheath |B| (nT)                           21.8 [15.6,28.8]           23.2 [15.5,35]     22.6     17.4     0.554     -1.38 [-4.58,+2.84] 
+background sheath T (eV)                                163 [142,285]            199 [152,286]      205      167    0.0842     -36.4 [-57.2,+5.11] 
+background sheath flow (km/s)                           82.5 [75,130]          98.8 [77.3,131]      105     73.3     0.106     -16.3 [-23.8,+0.291] 
+  sig: * nominal p<0.05;  ** survives Bonferroni p<0.0042
+
+=== CIRCULAR AXES (candidate-selection inputs) �� A vs REJ ONLY (both passed the identical moment screen);
+    A-vs-baseline differences on these axes are BY CONSTRUCTION and are NOT findings ===
+axis                                            A median[IQR]          REJ median[IQR]   p(A-REJ)   (NN median, context only)
+D_n (near/bg density)                     0.676 [0.526,0.784]        0.582 [0.526,0.7]     0.0501   (1.06)
+E_B (near/bg field)                          2.36 [1.81,2.86]         2.45 [2.16,3.13]     0.0801   (1.82)
+near-shell beta                           0.482 [0.278,0.838]      0.412 [0.231,0.596]     0.0905   (1.17)
+near-shell T (eV)                               147 [120,235]            170 [130,218]      0.844   (230)
+near-shell density (cm^-3)                   20.4 [13.6,31.2]         17.3 [10.7,23.8]     0.0719   (24.9)
+per-event n-|B| corr r_nB                -0.81 [-0.894,-0.69]   -0.799 [-0.866,-0.671]      0.806   (-0.665)
+
+=== SPECTRAL DISCRIMINANT (the separation itself; A vs REJ) ===
+peak-energy ratio        A            1 [0.759,1]   REJ       15.6 [3.31,34.8]   MWU p=1.27e-10
+shape correlation        A    0.956 [0.919,0.979]   REJ -0.0715 [-0.388,0.484]   MWU p=2.23e-11
+flux ratio               A     0.52 [0.392,0.659]   REJ    0.064 [0.044,0.125]   MWU p=1.73e-12
+
+=== THE TWO-SIGMA QUESTIONS, ANSWERED DIRECTLY ===
+(1) population D_n vs unity (contributing, N=661): median=0.917, Wilcoxon two-sided p=0.0131 (~2.5 sigma nominal)
+    BUT not boundary-robust: a +/-0.5 R_E MP offset moves the median across [0.55,1.14] (Appendix C) �� sign not boundary-proof.
+(2) field enhancement: 95% of contributing have E_B>1 (sign test p=3.5e-146) �� far beyond 2 sigma,
+    but generic to near-boundary draping/pile-up (E_B indistinguishable A-vs-REJ, below) �� robustly MEASURED, not PDL-diagnostic.
+(3) within the SAME moment screen (legitimate, not by construction): D_n A vs REJ = 0.676 vs 0.582 (MWU p=0.0501); E_B A vs REJ = 2.36 vs 2.45 (MWU p=0.0801)
+(4) A vs NN on D_n: 0.68 vs 1.06 �� BY CONSTRUCTION
+    (the candidate screen requires 0.40<=D_n<=0.90); quoted only to answer the question, never as a finding.
+
+=== CROSS-CHECKS vs committed outputs (pipeline-consistency gate) ===
+  [PASS] A D_n median ~0.68 (Table 3)
+  [PASS] A E_B median ~2.36 (Table 3)
+  [PASS] E_B A-vs-REJ MWU p ~0.08 (run22)
+  [PASS] r_nB A-vs-REJ MWU p ~0.80 (run21)
+  [PASS] all 60 have cone >= 45 deg (App C)
+  [PASS] population D_n Wilcoxon p ~0.013 (run21)
+
+=== READING (selection-limited, descriptive) ===
+These are the conditions under which clean candidates are FOUND in this selection-limited sample ��
+descriptive distributions, not occurrence rates and not physical drivers (the D_p axis is degenerate
+with a D_p-correlated boundary error, Sec.7.4; an IMF-axis difference must be read beside the Sec.7.3
+attenuation result). The PDL-specific separation remains spectral: peak-energy ratio 1.0 vs ~24.
+
+=== ADDENDUM (post-hoc checks on the run28 findings) ===
+(1) n_bg finding, floor-robustness: restricted to n_bg>5 -> A 31.1 (N=60) vs NN 25.8 (N=222), MWU p=0.003969
+(1) n_bg finding, floor-robustness: restricted to n_bg>10 -> A 31.4 (N=58) vs NN 26.9 (N=205), MWU p=0.009606
+    -> the induced floor (n_bg>=2.2) is far below both medians; the dense-sheath preference is not an artefact of the floor.
+(2) contamination regime, A vs REJ on D_p (nPa): 2.25 vs 1.8, MWU p=0.127
+(2) contamination regime, A vs REJ on cone angle (deg): 69.3 vs 62.3, MWU p=0.0459
+(2) contamination regime, A vs REJ on background density (cm^-3): 31.1 vs 25.3, MWU p=0.191
+(2) contamination regime, A vs REJ on SZA (deg): 14.8 vs 11.6, MWU p=0.032
+    -> where do spectral FALSE POSITIVES live? (clean axes for the spectral split; descriptive)
+(3) quiet-sheath pattern (coherent direction, individually n.s.): T_bg 163 vs 199 eV (p=0.084); v_bg 82 vs 99 km/s (p=0.11)

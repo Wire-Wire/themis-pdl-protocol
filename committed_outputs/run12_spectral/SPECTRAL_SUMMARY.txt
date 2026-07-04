@@ -1,0 +1,7 @@
+RUN 12 — spectral check of all 107 confirmed candidates
+thresholds: SHEATH_CONSISTENT = peak_ratio in [0.4,2.5] AND shape_corr >= 0.8
+            HOT_BOUNDARY_FLAG = peak_ratio > 2.5 ; SHAPE_FLAG = shape_corr < 0.6
+
+status counts: {'AMBIGUOUS_SPEC': 15, 'SHEATH_CONSISTENT': 60, 'HOT_BOUNDARY_FLAG': 28, 'SHAPE_FLAG': 4}
+
+saved -> outputs/run12_spectral/spectral_metrics.csv
