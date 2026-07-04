@@ -2,16 +2,13 @@ cff-version: 1.2.0
 message: "If you use this protocol or code, please cite both the software (below) and the dissertation."
 title: "themis-pdl-protocol: a measurement protocol for statistical surveys of the dayside plasma depletion layer"
 type: software
-version: "1.2.0"
-date-released: "2026-07-03"
+version: "1.2.1"
+date-released: "2026-07-04"
 doi: 10.5281/zenodo.21198269
 identifiers:
   - type: doi
-    value: "10.5281/zenodo.21198270"
-    description: "Zenodo archive of this version (v1.2.0)"
-  - type: doi
     value: "10.5281/zenodo.21198269"
-    description: "Zenodo concept DOI (all versions)"
+    description: "Zenodo concept DOI (resolves to the latest archived version)"
 authors:
   - family-names: "Xie"
     given-names: "Mingda"

@@ -10,7 +10,8 @@ with open(os.path.join(HERE, "committed_outputs", "run23_paired", "paired_1d_vs_
     rows = list(csv.DictReader(f))
 d1 = np.array([float(r["Dn_1d"]) for r in rows]); dr = np.array([float(r["Dn_radial"]) for r in rows])
 fig, ax = plt.subplots(figsize=(6, 4.2))
-bp = ax.boxplot([d1, dr], labels=["fixed Sun-Earth axis", "radial"], showfliers=False, widths=0.5)
+bp = ax.boxplot([d1, dr], showfliers=False, widths=0.5)  # tick labels set below: boxplot's labels= kw was removed in Matplotlib 3.11
+ax.set_xticks([1, 2]); ax.set_xticklabels(["fixed Sun-Earth axis", "radial"])
 ax.axhline(1.0, color="0.4", ls="--", lw=1)
 ax.set_ylabel(r"near-boundary density contrast $D_n$")
 ax.set_title(f"Same {len(rows)} encounters, two coordinate constructions:\n"

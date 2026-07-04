@@ -6,7 +6,7 @@ Quick API (see docs/API.md):
 
 Install:  pip install -e .        (from the repository root)
 """
-__version__ = "1.2.0"
+__version__ = "1.2.1"
 
 from .core import load_encounter, member_mask, shell_contrast, load_enc, shell_dn, KB
 from .coords import shue_r0, shue_alpha, shue_r, jelinek_r, compute_s

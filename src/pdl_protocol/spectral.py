@@ -1,6 +1,8 @@
 '''Per-event ion-spectral validation metrics (dissertation Sec. 3.5; docs/METHODS.md Sec. 4).'''
 import numpy as np
 
+_trapz = getattr(np, "trapezoid", None) or np.trapz  # np.trapz was renamed np.trapezoid in NumPy 2.0
+
 PEAK_SHEATH = (0.4, 2.5)
 SHAPE_SHEATH = 0.8
 SHAPE_REJECT = 0.6
@@ -12,7 +14,7 @@ def spectral_metrics(near_spec, bg_spec, energies):
     ok = np.isfinite(near) & np.isfinite(bg) & (near > 0) & (bg > 0)
     peak = en[ok][np.argmax(near[ok])] / en[ok][np.argmax(bg[ok])]
     shape = float(np.corrcoef(np.log(near[ok]), np.log(bg[ok]))[0, 1])
-    flux = float(np.trapz(near[ok], en[ok]) / np.trapz(bg[ok], en[ok]))
+    flux = float(_trapz(near[ok], en[ok]) / _trapz(bg[ok], en[ok]))
     return float(peak), shape, flux
 
 

@@ -123,7 +123,7 @@ Some committed outputs and scripts carry **legacy internal tier labels** (`A_SPE
 
 ## Releases & DOI
 
-Every GitHub release is archived on [Zenodo](https://zenodo.org). To cite the software in general, use the concept DOI **[10.5281/zenodo.21198269](https://doi.org/10.5281/zenodo.21198269)** (always resolves to the latest version). The current release [v1.2.0](https://github.com/Wire-Wire/themis-pdl-protocol/releases/tag/v1.2.0) is archived as [10.5281/zenodo.21198270](https://doi.org/10.5281/zenodo.21198270).
+Every GitHub release is archived on [Zenodo](https://zenodo.org). To cite the software, use the concept DOI **[10.5281/zenodo.21198269](https://doi.org/10.5281/zenodo.21198269)** — it always resolves to the latest archived version, and the per-release DOIs (v1.2.0 = [10.5281/zenodo.21198270](https://doi.org/10.5281/zenodo.21198270), …) are listed on that record's Versions panel.
 
 ## Cite
 

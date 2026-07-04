@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "pdl-protocol"
-version = "1.2.0"
+version = "1.2.1"
 description = "Measurement protocol for statistical surveys of the dayside plasma depletion layer in the THEMIS magnetosheath: radial normalised coordinate, magnetosheath-membership screen, per-event ion-spectral validation."
 readme = "README.md"
 requires-python = ">=3.10"

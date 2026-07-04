@@ -1,5 +1,11 @@
 # Changelog
 
+## v1.2.1 — 2026-07-04
+
+- NumPy 2.0 compatibility: `np.trapz` was removed in NumPy 2.0 (renamed `np.trapezoid`), which broke `pdl_protocol.spectral` — and with it `examples/02` and CI — on modern NumPy. The module now uses whichever name the installed NumPy provides. Same function, same numbers; environments pinned via `requirements.txt` are unaffected.
+- Matplotlib ≥3.11 compatibility: `quickstart_fig2.py` passed the removed `labels=` keyword to `boxplot`; tick labels are now set explicitly. The full CI sequence was re-run locally on NumPy 2.4 / SciPy 1.17 / current Matplotlib before this release.
+- Zenodo DOI added to the README badge row, the "Releases & DOI" section, and `CITATION.cff` (concept DOI 10.5281/zenodo.21198269).
+
 ## v1.2.0 — 2026-07-03
 
 The two-door release: the repository now separates its two audiences explicitly.
